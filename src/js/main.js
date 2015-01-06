@@ -1,4 +1,4 @@
-/// <reference path="../libs/ds/easeljs/easeljs.d.ts"/>
+/// <reference path="../libs/ds/createjs/createjs.d.ts"/>
 var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -16,6 +16,10 @@ var demo;
             var _this = this;
             // ステージを準備
             this._stage = new createjs.Stage(document.getElementById("myCanvas"));
+            // タッチ対応
+            if (createjs.Touch.isSupported()) {
+                createjs.Touch.enable(this._stage);
+            }
             // Tickerを作成
             createjs.Ticker.timingMode = createjs.Ticker.RAF;
             createjs.Ticker.addEventListener("tick", function (event) { return _this.tickeHandler(event); });

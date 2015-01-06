@@ -13,6 +13,12 @@ module demo {
         public constructor() {
             // ステージを準備
             this._stage = new createjs.Stage(document.getElementById("myCanvas"));
+
+            // タッチ対応
+            if (createjs.Touch.isSupported()) {
+                createjs.Touch.enable(this._stage);
+            }
+
             // Tickerを作成
             createjs.Ticker.timingMode = createjs.Ticker.RAF;
             createjs.Ticker.addEventListener("tick", (event) => this.tickeHandler(event));
