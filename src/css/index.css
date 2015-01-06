@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  overflow: hidden; }
+
+#myCanvas {
+  cursor: pointer;
+  background-color: #000; }
